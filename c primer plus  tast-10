@@ -1,0 +1,154 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+/*double min(double a, double b)
+{
+	double min;
+	if (a > b)
+		min = b;
+	else
+		min = a;
+	return min;
+
+}
+int main()
+{
+	double a, b,m;
+	printf("请输入");
+	scanf("%lf %lf", &a, &b);
+	m=min(a, b);
+	printf("%lf", m);
+}*/
+
+
+
+
+/*void chline(char ch, int a, int b)
+{
+	for (int j = 0; j <= a; j++)
+	{
+		for (int i = 0; i <=b; i++)
+		{
+			printf("%c", ch);
+		}
+		printf("\n");
+	}
+	return;
+}
+int main()
+{
+	char ch;
+	int a, b;
+	printf("shuru");
+	scanf("%c %d %d", &ch,&a,&b);
+	chline(ch, a, b);
+	return 0;
+}*/
+
+
+
+
+/*void find_position(char ch)
+{
+	int i;
+	while ((ch = getchar())!= '&')
+	{
+		for (i = 'a' ; i <'z' ; i++)
+		{
+			if (i == ch)
+				printf("%c,%d\n", ch, i-96);
+		}
+		for (i ='A'; i < 'Z'; i++)
+		{
+			if (i == ch)
+				printf("%c,%d\n", ch, i-65);
+		}
+	}
+	
+	return;
+}
+int main()
+{
+	char ch;
+	printf("输入字符串"); ch = getchar();
+	find_position(ch);
+	return 0;
+}*/
+
+
+
+
+/*double power(double n, int a)
+{
+	int i = 0,j;
+	double sum=1;
+	if (n == 0)
+	{
+		printf("结果为零，零的零次幂未定义");
+		sum = 0;
+	}
+	else
+	{
+		if (a < 0)
+		{
+			j = -a;
+			for (i = 0; i < j; i++)
+			{
+				sum *= n;
+			}
+			sum = (1 / sum);
+		}
+		else if (a == 0)
+		{
+			printf("零次幂未定义");
+			sum = 1;
+		}
+		else
+		{
+			for (i = 0; i < a; i++)
+			{
+				sum *= n;
+			}
+		}
+
+	}
+	return sum;
+}
+int main()
+{
+	double sum, a;
+	int n;
+
+	printf("请输入底数和幂值");
+	while ((scanf("%lf %d", &a, &n) == 2))
+	{
+		sum=power(a,n);
+		printf("%lf", sum);
+		printf("请输入底数和幂值, q结束");
+	}
+	return 0;
+}*/
+
+
+
+
+void to_base(int a, int b)
+{
+	int i;
+
+	i = a % b;
+	if (a > b)
+	{
+		to_base(a / b, b);
+	}
+	printf("%d", i);
+	return;
+}
+int main()
+{
+    int a,b;
+    printf("please enter two number");
+    scanf("%d %d",&a,&b);
+    to_base(a,b);
+      return 0；
+}
