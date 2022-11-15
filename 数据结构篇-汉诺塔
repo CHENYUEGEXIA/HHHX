@@ -1,0 +1,39 @@
+#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+void hannuota(int n, char A, char B, char C)
+{
+	/*
+	如果盘子数为1
+		直接将A柱子上的盘子放到C柱子上
+	如果盘子数为n
+		将A柱子上（n-1）个的盘子通过C柱子放到B柱子上
+		将A上第n个盘子放到C柱子上
+		将B上（n-1）个盘子通过A柱子放到C柱子上
+	*/
+
+	if (n == 1)
+	{
+		printf("将A柱子上的盘子放到C柱子上");
+	}
+	else
+	{
+		hannuota(n - 1, A, C, B);
+		printf("将编号为%d的盘子通过%c柱子放到%c柱子上",n, A, C);
+		hannuota(n - 1, B, A, C);
+	}
+}
+int main()
+{
+	char ch1 = 'A';
+	char ch2 = 'B';
+	char ch3 = 'C';
+	int n;
+
+	printf("输入盘子数");
+	scanf_s("%d ", &n);
+	hannuota(n, 'A','B','C');
+
+	return 0;
+}
